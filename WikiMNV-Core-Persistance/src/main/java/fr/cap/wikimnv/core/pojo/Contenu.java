@@ -21,6 +21,7 @@ public abstract class Contenu {
 	private String id;
 	@XmlTransient
 	public Profil author;
+	
 	@XmlTransient
 	public EtatPublication etat;
 	public Date dateCreation;
