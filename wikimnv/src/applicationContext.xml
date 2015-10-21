@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+            
+            	    <bean id="sc" class="fr.cap.wikimnv.consultation.service.impl.ServiceCommentaireImpl"/>
+            	    <bean id="sa" class="fr.cap.wikimnv.contribution.service.impl.ServiceArticleImpl"/>
+            	    <bean id="st" class="fr.cap.wikimnv.contribution.service.impl.ServiceTagImpl"/>
+            	    
+	<bean id="sConsultation" class="fr.cap.wikimnv.consultation.service.impl.ServiceConsultationImpl">
+		<property name="serviceCommentaire" ref="sc"></property>
+		<property name="serviceArticle" ref="sa"></property>
+		<property name="serviceTag" ref="st"></property>
+	</bean>
+</beans>

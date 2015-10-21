@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://cxf.apache.org/configuration/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:soap="http://cxf.apache.org/bindings/soap"
+	xsi:schemaLocation=
+		   "http://www.springframework.org/schema/beans 
+		    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+            http://www.springframework.org/schema/aop 
+            http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+            http://www.springframework.org/schema/context
+		    http://www.springframework.org/schema/context/spring-context-4.0.xsd
+            http://www.cxf.apache.org/bindings/soap http://www.cxf.apache.org/bindings/schemas/configuration/soap.xsd
+			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+			
+	
+	<context:property-placeholder location="classpath:wikimnv.properties" />
+	
+	<import resource="aop-Context.xml"/>
+	
+	
+	
+	<jaxws:server serviceClass="fr.cap.wikimnv.core.structure.service.IServiceCommentaire" address="/ServiceCommentaire" serviceBean="#ServiceCommentaire"> </jaxws:server>
+	
+	<!--<jaxws:server serviceClass="fr.cap.wikimnv.core.structure.service.IServiceTag" address="/ServiceTag" serviceBean="#ServiceTag"> </jaxws:server>
+	<jaxws:server serviceClass="fr.cap.wikimnv.core.structure.service.IServiceArticle" address="/ServiceArticle" serviceBean="#ServiceArticle"> </jaxws:server>
+	<jaxws:server serviceClass="fr.cap.wikimnv.core.structure.service.IServiceTemplate" address="/ServiceTemplate" serviceBean="#ServiceTemplate"> </jaxws:server>
+	<jaxws:server serviceClass="fr.cap.wikimnv.core.structure.service.IServiceSignalement" address="/ServiceSignalement" serviceBean="#ServiceSignalement"> </jaxws:server>-->
+	
+	
+	<bean id="ServiceCommentaire" class="fr.cap.wikimnv.core.structure.service.impl.ServiceCommentaireImpl" />
+	
+	<!--<bean id="ServiceTag" class="fr.cap.wikimnv.core.structure.service.impl.ServiceTagImpl" />
+	<bean id="ServiceArticle" class="fr.cap.wikimnv.core.structure.service.impl.ServiceArticleImpl" />
+	<bean id="ServiceTemplate" class="fr.cap.wikimnv.core.structure.service.impl.ServiceTemplateImpl" />
+	<bean id="ServiceSignalement" class="fr.cap.wikimnv.core.structure.service.impl.ServiceSignalementImpl" />-->
+	
+	<bean id="sCrud" class="fr.cap.wikimnv.core.persistance.cli.PersistanceCli" />
+</beans>

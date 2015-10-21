@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://cxf.apache.org/configuration/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:soap="http://cxf.apache.org/bindings/soap"
+	xsi:schemaLocation=
+		   "http://www.springframework.org/schema/beans 
+		    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+            http://www.springframework.org/schema/aop 
+            http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+            http://www.cxf.apache.org/bindings/soap http://www.cxf.apache.org/bindings/schemas/configuration/soap.xsd
+			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+			
+			
+		<!-- injection du logger cli -->
+	<bean id="ServiceLog" class="${logger.class}" />
+
+	<aop:config>
+		<aop:aspect id="sLoggerAspect" ref="ServiceLog">
+			
+			
+			<aop:pointcut id="perfLogger" expression="${logger.filter.perfLogger}" />
+			<aop:around pointcut-ref="perfLogger" method="logProcess" />
+
+			<aop:pointcut id="eventLogger" expression="${logger.filter.eventLogger}" />
+			<aop:before pointcut-ref="eventLogger" method="logEvent" />
+			
+			
+		</aop:aspect>
+	</aop:config>
+	
+</beans>
