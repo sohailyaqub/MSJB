@@ -28,12 +28,12 @@ public class DaoMongoDBTest {
 //		fail("Not yet implemented");
 //	}
 //
-	@Test
+	/*@Test
 	public void testGetAll() throws MNVException {
 		DaoMongoDB mongo = new DaoMongoDB(placeholderConfigMM);
 		
 		mongo.getAll(Article.class);
-	}
+	}*/
 //
 //	@Test
 //	public void testGet() {
@@ -44,7 +44,7 @@ public class DaoMongoDBTest {
 //	public void testDelete() {
 //		fail("Not yet implemented");
 //	}
-
+/*
 	@Test
 	public void testSaveOrUpdate() throws MNVException {
 		DaoMongoDB mongo = new DaoMongoDB(placeholderConfigMM);
@@ -66,7 +66,7 @@ public class DaoMongoDBTest {
 		
 		
 		mongo.saveOrUpdate(a);
-	}
+	}*/
 //
 //	@Test
 //	public void testExecuteQuery() {

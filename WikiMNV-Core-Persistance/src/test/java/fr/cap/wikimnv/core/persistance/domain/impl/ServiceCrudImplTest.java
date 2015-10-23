@@ -38,7 +38,7 @@ public class ServiceCrudImplTest {
 	public void testLister() {
 		fail("Not yet implemented");
 	}
-*/
+*//*
 	@Test
 	public void testSauver() {
 		
@@ -67,7 +67,7 @@ public class ServiceCrudImplTest {
 			e.printStackTrace();
 		}
 	}
-/*
+
 	@Test
 	public void testFaireRequete() {
 		fail("Not yet implemented");
