@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://cxf.apache.org/configuration/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:soap="http://cxf.apache.org/bindings/soap"
+	xsi:schemaLocation=
+		   "http://www.springframework.org/schema/beans 
+		    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+            http://www.springframework.org/schema/aop 
+            http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+            http://www.cxf.apache.org/bindings/soap http://www.cxf.apache.org/bindings/schemas/configuration/soap.xsd
+			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+
+	<!--  web service admin serviceProfil -->
+	<jaxws:server serviceClass="fr.cap.wikimnv.service.IServiceProfil" address="/serviceProfil" serviceBean="#ServiceProfil"> </jaxws:server>
+
+	<!--  web service admin serviceUser -->
+	<jaxws:server serviceClass="fr.cap.wikimnv.service.IServiceUser" address="/serviceUser" serviceBean="#ServiceUser"> </jaxws:server>
+		
+	<!-- injection des implementations serviceProfil et serviceUser -->
+
+	<bean id="ServiceProfil" class="fr.cap.wikimnv.service.impl.ServiceProfilImpl">
+		<property name="pcli" ref="PersistenceCli"/>
+	</bean>
+	<bean id="ServiceUser" class="fr.cap.wikimnv.service.impl.ServiceUserImpl">
+		<property name="pcli" ref="PersistenceCli"/>
+	</bean>
+
+	<!-- injection de pcli -->
+	<bean id="PersistenceCli" class="fr.cap.wikimnv.core.persistance.cli.PersistanceCli"/>
+
+
+	<!-- injection du logger cli -->
+	<bean id="ServiceLog" class="fr.cap.wikimnv.logger.LoggerMNV" />
+	
+	<!-- 
+
+	<aop:config>
+		<aop:aspect id="sLoggerAspect" ref="ServiceLog">
+			
+			
+			<aop:pointcut id="perfLogger" expression="execution(* fr.cap.wikimnv.service.impl..*(..))" />
+			<aop:around pointcut-ref="perfLogger" method="logProcess" />
+
+			<aop:pointcut id="eventLogger" expression="execution(* fr.cap.wikimnv.service.impl..set*(..))" />
+			<aop:before pointcut-ref="eventLogger" method="logEvent" />
+			
+			
+		</aop:aspect>
+	</aop:config>
+	-->
+
+</beans>
