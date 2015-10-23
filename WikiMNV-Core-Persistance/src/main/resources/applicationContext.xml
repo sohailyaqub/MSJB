@@ -18,6 +18,11 @@
 
 	<context:property-placeholder location="classpath:wikimnv.properties" />
 	
+	<jaxws:server serviceClass="fr.cap.wikimnv.core.persistance.IServiceCRUD" address="/serviceCRUD" serviceBean="#ServiceCRUD"> </jaxws:server>
+	
+	<bean id="ServiceCRUD" class="fr.cap.wikimnv.core.persistance.ServiceCrudImpl" >
+	<property name="dao" ref="dao"/>
+	</bean>
 	<!-- le logger en mode aop -->
 	<!--  import resource="aopContext.xml"/ -->
 	
