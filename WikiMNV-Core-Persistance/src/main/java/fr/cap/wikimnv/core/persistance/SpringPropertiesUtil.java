@@ -12,7 +12,7 @@ public class SpringPropertiesUtil extends PropertyPlaceholderConfigurer {
 
     private static Map<String, String> propertiesMap;
     // Default as in PropertyPlaceholderConfigurer
-    private int springSystemPropertiesMode = SYSTEM_PROPERTIES_MODE_FALLBACK;
+    private int springSystemPropertiesMode = SYSTEM_PROPERTIES_MODE_OVERRIDE;
 
     @Override
     public void setSystemPropertiesMode(int systemPropertiesMode) {
