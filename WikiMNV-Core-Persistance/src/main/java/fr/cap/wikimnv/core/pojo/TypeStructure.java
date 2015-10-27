@@ -2,11 +2,12 @@ package fr.cap.wikimnv.core.pojo;
 
 public enum TypeStructure {
 	
-	ARTICLE("Article"), 
-	PROFIL("Profil"), 
-	TAG("Tag"), 
-	TEMPLATE("Template"), 
-	SIGNALEMENT("Signalement");
+	ARTICLE ("Article"), 
+	PROFIL ("Profil"), 
+	TAG ("Tag"),
+	TEMPLATE ("Template"), 
+	SIGNALEMENT("Signalement"),
+	COMMENTAIRE("Commentaire");
 
 	private String classEffectiveName;
 	

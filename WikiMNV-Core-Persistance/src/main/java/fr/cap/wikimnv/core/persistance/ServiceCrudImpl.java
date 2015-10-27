@@ -1,5 +1,6 @@
 package fr.cap.wikimnv.core.persistance;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -96,6 +97,13 @@ public class ServiceCrudImpl implements IServiceCRUD {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	@Override
+	public Set<Object> testSet() throws MNVException {
+		// TODO Auto-generated method stub
+		Set<Object> test=new HashSet<Object>();
+		test.add(new Object());
+		return test;
 	}
 
 	
