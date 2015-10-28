@@ -8,8 +8,8 @@ import fr.cap.wikimnv.core.pojo.TypeStructure;
 public interface ICRUDGeneric  {
 	
 	Set<?> lister(TypeStructure type) throws MNVException ;
-	Object lire(Object id, Class cls) throws MNVException;
-	void supprimer(Object id, Class cls) throws MNVException;
+	Object lire(Object id, TypeStructure type) throws MNVException;
+	void supprimer(Object id, TypeStructure type) throws MNVException;
 	Object sauver(Object obj) throws MNVException ;
 	
 }
