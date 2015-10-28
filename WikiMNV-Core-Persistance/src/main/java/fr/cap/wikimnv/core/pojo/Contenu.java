@@ -11,8 +11,6 @@ import javax.xml.bind.annotation.XmlTransient;
 import org.mongojack.Id;
 import org.mongojack.ObjectId;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 public abstract class Contenu {
@@ -21,7 +19,6 @@ public abstract class Contenu {
 	private String id;
 	@XmlTransient
 	public Profil author;
-	
 	@XmlTransient
 	public EtatPublication etat;
 	public Date dateCreation;

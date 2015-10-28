@@ -20,7 +20,7 @@
 	<jaxws:server serviceClass="${wikimnv.service.1.interface}"
 		address="${wikimnv.service.1.endpoint}" serviceBean="#ServicePersistance">
 	</jaxws:server>
-	
+	 
 	
 	
 	

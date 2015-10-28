@@ -8,20 +8,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public enum EtatPublication {
 	
-	PUBLIE ("publie"), ARCHIVE ("arcive"), BROUILLON ("brouillon"), ENCOURSDEVALIDATION ("en cours");
+	PUBLIE, ARCHIVE, BROUILLON, ENCOURSDEVALIDATION
 
-	String libelle;
-	
-	EtatPublication(String libelle) {
-		this.libelle=libelle;
-	}
-
-	public String getLibelle() {
-		return libelle;
-	}
-
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
-	}
-	
 }

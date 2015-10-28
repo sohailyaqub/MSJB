@@ -4,7 +4,7 @@ package fr.cap.wikimnv.core.commons.exception;
 public class MNVException extends Exception {
 		
 	
-	private int codeErreur;
+	int codeErreur;
 	
 	
 	public MNVException() {

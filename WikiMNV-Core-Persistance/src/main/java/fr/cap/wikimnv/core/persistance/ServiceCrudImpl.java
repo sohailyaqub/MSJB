@@ -28,10 +28,10 @@ public class ServiceCrudImpl implements IServiceCRUD {
 	//CONSTRUCTEURS
 	public ServiceCrudImpl() {}
 	
-	
-	public Set<?> lister(TypeStructure type) throws MNVException {
+	@Override
+	public Set<?> lister(Object  type) throws MNVException {
 		try {
-			return dao.getAll(Class.forName(type.getClassEffectiveName()));
+			return dao.getAll(Class.forName(((TypeStructure) type).getClassEffectiveName()));
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}		
@@ -78,10 +78,10 @@ public class ServiceCrudImpl implements IServiceCRUD {
 	
 	
 	@Override
-	public Object lire(Object obj, TypeStructure type) throws MNVException{
+	public Object lire(Object obj, Object  type) throws MNVException{
 		
 		try {
-			return dao.get(obj, Class.forName(type.getClassEffectiveName()));
+			return dao.get(obj, Class.forName(((TypeStructure) type).getClassEffectiveName()));
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -89,10 +89,10 @@ public class ServiceCrudImpl implements IServiceCRUD {
 		return null;
 	}
 	@Override
-	public void supprimer(Object obj, TypeStructure type) throws MNVException {
+	public void supprimer(Object obj, Object  type) throws MNVException {
 		
 		try {
-			dao.delete(obj, Class.forName(type.getClassEffectiveName()));
+			dao.delete(obj, Class.forName(((TypeStructure) type).getClassEffectiveName()));
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -105,7 +105,6 @@ public class ServiceCrudImpl implements IServiceCRUD {
 		test.add(new Object());
 		return test;
 	}
-
 	
 
 }

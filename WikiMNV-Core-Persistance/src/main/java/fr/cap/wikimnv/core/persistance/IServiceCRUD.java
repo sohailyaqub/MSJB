@@ -13,5 +13,4 @@ import fr.cap.wikimnv.core.pojo.Query;
 public interface IServiceCRUD extends ICRUDGeneric{
 	
 	List<?> faireRequete(Query query, List<Meta> params) throws MNVException;
-	Set<Object> testSet() throws MNVException;
 }
