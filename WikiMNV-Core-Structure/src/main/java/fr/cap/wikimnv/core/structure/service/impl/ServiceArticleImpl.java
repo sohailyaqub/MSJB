@@ -17,28 +17,17 @@ public class ServiceArticleImpl implements IServiceArticle {
 	PersistanceCli sCrud ;
 	
 	public ServiceArticleImpl() {
-		sCrud = new PersistanceCli() ;
+		super();
 	}
 
 	public void changerEtat(EtatPublication etatPublication, Article article) throws MNVException {
-		try {
-			article.setEtat(etatPublication);
-			sCrud.sauver(article) ;
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		article.setEtat(etatPublication);
+		sCrud.sauver(article) ;
 	}
 
 	@Override
 	public Set<?> lister(Object  typeStructure) throws MNVException {
-		try {
-			return (Set<Article>) sCrud.lister(typeStructure);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+		return sCrud.lister(typeStructure);
 	}
 
 	/**
@@ -47,15 +36,8 @@ public class ServiceArticleImpl implements IServiceArticle {
 	 * @return Article
 	 */
 	@Override
-	public void supprimer(Object article) throws MNVException {
-		// TODO Auto-generated method stub
-		try {
-			
-			sCrud.supprimer(article);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void supprimer(Object article, Object type) throws MNVException {
+		sCrud.supprimer(article, type);
 	}
 	
 	/**
@@ -65,15 +47,7 @@ public class ServiceArticleImpl implements IServiceArticle {
 	 */
 
 	public Object sauver(Object article) throws MNVException {
-		// TODO Auto-generated method stub
-		try {
-			return (Article) sCrud.sauver(article);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		// passer l'id et le type
-		return null ;
+		return (Article) sCrud.sauver(article);
 	}
 
 	public PersistanceCli getsCrud() {
@@ -86,16 +60,8 @@ public class ServiceArticleImpl implements IServiceArticle {
 	
 	
 	@Override
-	public Object lire(Object article, TypeStructure typeStructure) throws MNVException {
-		try {
-			return sCrud.lire(article, typeStructure);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		// TODO Auto-generated method stub
-		return null ;
-
+	public Object lire(Object article, Object  typeStructure) throws MNVException {
+		return sCrud.lire(article, typeStructure);
 	}
 	
 	public Object rechercher(Query query, Map<String, Object> params) {

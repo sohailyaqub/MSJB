@@ -23,27 +23,15 @@ public class ServiceSignalementImpl implements IServiceSignalement {
 	public void setsCrud(PersistanceCli sCrud) {this.sCrud = sCrud;}
 
 	public ServiceSignalementImpl() {
-		sCrud = new PersistanceCli() ;
+		super();
 	}
 	
 	private Signalement changerEtat(EtatSignalement etat, Object key) throws MNVException {
 		Signalement sig = null ;
-		try {
-			sig = (Signalement) sCrud.lire(key, TypeStructure.SIGNALEMENT);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		sig = (Signalement) sCrud.lire(key, TypeStructure.SIGNALEMENT);
 		sig.setEtat(etat);
 
-		try {
-			return (Signalement)sCrud.sauver(sig);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}		
-		
-		return null;
+		return (Signalement)sCrud.sauver(sig);		
 	}
 
 	
@@ -56,29 +44,15 @@ public class ServiceSignalementImpl implements IServiceSignalement {
 		return changerEtat(EtatSignalement.TRAITE, id);
 	}
 	
-	public Object supprimer(Object obj) throws MNVException {
-		try {
-			return (Signalement) sCrud.supprimer(obj);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return null;
+	public void  supprimer(Object obj, Object type) throws MNVException {
+		sCrud.supprimer(obj, type);
 	}
 
 
 	
 	public Object sauver(Object obj) throws MNVException {
 		
-			try {
-				return (Signalement) sCrud.sauver(obj);
-			} catch (MNVException_Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			return null;
+			return (Signalement) sCrud.sauver(obj);
 		
 	}
 
@@ -88,25 +62,13 @@ public class ServiceSignalementImpl implements IServiceSignalement {
 		sauver(sig);		
 	}
 	
-	public Object lire(Object sig, TypeStructure typeStructure) throws MNVException {
-		try {
-			return sCrud.lire(sig, typeStructure) ;
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null ;
+	public Object lire(Object sig, Object  typeStructure) throws MNVException {
+		return sCrud.lire(sig, typeStructure) ;
 	}
 	
-	public Set<?> lister(TypeStructure typeStructure) throws MNVException {
+	public Set<?> lister(Object  typeStructure) throws MNVException {
 		
-		try {
-			return  (Set<?>) sCrud.lister(typeStructure);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+		return  (Set<?>) sCrud.lister(typeStructure);
 	}
 	
 

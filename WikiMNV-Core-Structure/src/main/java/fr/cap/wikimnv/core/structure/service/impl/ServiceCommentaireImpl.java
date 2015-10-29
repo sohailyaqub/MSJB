@@ -20,8 +20,9 @@ import fr.cap.wikimnv.core.structure.service.IServiceCommentaire;
 public class ServiceCommentaireImpl implements IServiceCommentaire {
 	PersistanceCli sCrud ;
 	
+	
 	public ServiceCommentaireImpl() {
-		sCrud = new PersistanceCli() ;
+		sCrud=new PersistanceCli();
 	}
 
 	/**
@@ -30,15 +31,9 @@ public class ServiceCommentaireImpl implements IServiceCommentaire {
 	 *@author  Sohail, Messan  
 	 */ 
 	
-	public Set<?> lister(TypeStructure typeStructure) throws MNVException {
+	public Set<?> lister(Object typeStructure) throws MNVException {
 		
-		try {
-			return  (Set<Commentaire>) sCrud.lister(typeStructure);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+		return sCrud.lister(typeStructure);
 	}
 	
 	/**
@@ -49,14 +44,8 @@ public class ServiceCommentaireImpl implements IServiceCommentaire {
 	 */ 
 
 	
-	public Object lire(Object commentaire, TypeStructure typeStructure) throws MNVException {
-		try {
-			return (Commentaire) sCrud.lire(commentaire, typeStructure) ;
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null ;
+	public Object lire(Object commentaire, Object typeStructure) throws MNVException {
+		return (Commentaire) sCrud.lire(commentaire, typeStructure) ;
 	}
 	
 	/**
@@ -69,13 +58,7 @@ public class ServiceCommentaireImpl implements IServiceCommentaire {
 
 	
 	public Object sauver(Object commentaire) throws MNVException {
-		try {
-			return (Commentaire) sCrud.sauver(commentaire) ;
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null ;
+		return (Commentaire) sCrud.sauver(commentaire) ;
 	}
 	
 	/**
@@ -87,13 +70,8 @@ public class ServiceCommentaireImpl implements IServiceCommentaire {
 	 */
 
 	
-	public void supprimer(Object commentaire, TypeStructure typeStructure) throws MNVException {
-		try {
-			sCrud.supprimer(commentaire) ;
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void supprimer(Object commentaire, Object typeStructure) throws MNVException {
+		sCrud.supprimer(commentaire, typeStructure) ;
 	}
 
 	/**
@@ -111,11 +89,11 @@ public class ServiceCommentaireImpl implements IServiceCommentaire {
 		return (Commentaire) sauver(commentaire) ;
 	}
 
-	public PersistanceCli getsCrud() {
+	public PersistanceCli getSCrud() {
 		return sCrud;
 	}
 
-	public void setsCrud(PersistanceCli sCrud) {
+	public void setSCrud(PersistanceCli sCrud) {
 		this.sCrud = sCrud;
 	}
 	

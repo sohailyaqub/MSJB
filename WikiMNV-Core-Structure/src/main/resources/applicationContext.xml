@@ -34,9 +34,17 @@
 	<bean id="ServiceCommentaire" class="fr.cap.wikimnv.core.structure.service.impl.ServiceCommentaireImpl" />
 	
 	<!--<bean id="ServiceTag" class="fr.cap.wikimnv.core.structure.service.impl.ServiceTagImpl" />
-	<bean id="ServiceArticle" class="fr.cap.wikimnv.core.structure.service.impl.ServiceArticleImpl" />
-	<bean id="ServiceTemplate" class="fr.cap.wikimnv.core.structure.service.impl.ServiceTemplateImpl" />
-	<bean id="ServiceSignalement" class="fr.cap.wikimnv.core.structure.service.impl.ServiceSignalementImpl" />-->
+	<bean id="ServiceArticle" class="fr.cap.wikimnv.core.structure.service.impl.ServiceArticleImpl" >
+	<property name="sCrud"  ref="sCrud"  />
+	</bean>
 	
-	<bean id="sCrud" class="fr.cap.wikimnv.core.persistance.cli.PersistanceCli" />
+	<bean id="ServiceTemplate" class="fr.cap.wikimnv.core.structure.service.impl.ServiceTemplateImpl" >
+	<property name="sCrud"  ref="sCrud"  />
+	</bean>
+	
+	<bean id="ServiceSignalement" class="fr.cap.wikimnv.core.structure.service.impl.ServiceSignalementImpl" >
+	    <property name="sCrud"  ref="sCrud"  />
+	    </bean>-->
+	
+	<bean id="Crud" class="fr.cap.wikimnv.core.persistance.cli.PersistanceCli" />
 </beans>

@@ -27,25 +27,20 @@ public class ServiceTagImpl implements IServiceTag {
 	@Autowired
 	PersistanceCli sCrud ;
 	
-	public Object supprimer(Object obj) throws MNVException {
-		try {
-			return (Tag) sCrud.supprimer(obj);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null ;
+	
+	
+	public ServiceTagImpl() {
+		super();
+	}
+
+
+	public void  supprimer(Object obj, Object type) throws MNVException {
+		sCrud.supprimer(obj, type);
 	}
 
 	
 	public Object sauver(Object obj) throws MNVException {
-		try {
-			return (Tag) sCrud.sauver(obj);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null ;
+		return (Tag) sCrud.sauver(obj);
 	}
 
 	
@@ -79,25 +74,13 @@ public class ServiceTagImpl implements IServiceTag {
 		this.sCrud = sCrud;
 	}
 	
-	public Object lire(Object tag, TypeStructure typeStructure) throws MNVException {
-		try {
-			return sCrud.lire(tag, typeStructure) ;
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null ;
+	public Object lire(Object tag, Object  typeStructure) throws MNVException {
+		return sCrud.lire(tag, typeStructure) ;
 	}
 	
 	
-	public Set<?> lister(TypeStructure typeStructure) throws MNVException {
+	public Set<?> lister(Object  typeStructure) throws MNVException {
 		
-		try {
-			return  (Set<?>) sCrud.lister(typeStructure);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+		return  (Set<?>) sCrud.lister(typeStructure);
 	}
 }

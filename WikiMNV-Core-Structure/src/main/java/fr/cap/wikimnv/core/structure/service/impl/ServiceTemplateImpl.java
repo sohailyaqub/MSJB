@@ -15,6 +15,10 @@ public class ServiceTemplateImpl implements IServiceTemplate {
 	
 	PersistanceCli sCrud ;
 
+	public ServiceTemplateImpl() {
+		super();
+	}
+
 	public void ajouterMeta(Template template, String metadonnee) throws MNVException {
 		template.getMeta().add(metadonnee);
 		this.sauver(template);
@@ -26,25 +30,11 @@ public class ServiceTemplateImpl implements IServiceTemplate {
 	}
 
 	public Object sauver(Object obj) throws MNVException {
-		// TODO Auto-generated method stub
-		try {
-			return (Template) sCrud.sauver(obj);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null ;
+		return (Template) sCrud.sauver(obj);
 	}
 
-	public Object supprimer(Object obj) throws MNVException {
-		// TODO Auto-generated method stub
-		try {
-			return (Template) sCrud.supprimer(obj);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null ;
+	public void  supprimer(Object obj, Object type) throws MNVException {
+		sCrud.supprimer(obj, type);
 	}
 
 	public PersistanceCli getsCrud() {
@@ -55,33 +45,14 @@ public class ServiceTemplateImpl implements IServiceTemplate {
 		this.sCrud = sCrud;
 	}
 	
-	public Object lire(Object template, TypeStructure typeStructure) throws MNVException {
-		try {
-			return sCrud.lire(template, typeStructure) ;
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null ;
+	public Object lire(Object template, Object typeStructure) throws MNVException {
+		return sCrud.lire(template, typeStructure) ;
 	}
 	
-	public Set<?> lister(TypeStructure typeStructure) throws MNVException {
+	public Set<?> lister(Object typeStructure) throws MNVException {
 		
-		try {
-			return  (Set<?>) sCrud.lister(typeStructure);
-		} catch (MNVException_Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+		return  sCrud.lister(typeStructure);
 	}
 
-	
-
-	@Override
-	public void supprimer(Object arg0, Class arg1) throws MNVException {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

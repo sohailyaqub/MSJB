@@ -17,7 +17,7 @@
 			http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	
 	<bean id="sLogger" class="${wikimnv.logger.class}" scope="session" />
-	
+	<!-- 
 	<aop:config>
 		<aop:aspect id="sLoggerAspect" ref="sLogger">
 			<aop:pointcut id="perfLogger"
@@ -25,5 +25,5 @@
 			<aop:around pointcut-ref="perfLogger" method="logProcess" />
 		</aop:aspect>
 	</aop:config>
-	
+	 -->
 </beans>
