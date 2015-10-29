@@ -76,11 +76,7 @@ public class ServiceTemplateImpl implements IServiceTemplate {
 		return null;
 	}
 
-	@Override
-	public Object lire(Object arg0, Class arg1) throws MNVException {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 	@Override
 	public void supprimer(Object arg0, Class arg1) throws MNVException {

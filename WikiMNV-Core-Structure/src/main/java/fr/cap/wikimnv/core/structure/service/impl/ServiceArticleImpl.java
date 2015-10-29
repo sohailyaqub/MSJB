@@ -46,10 +46,10 @@ public class ServiceArticleImpl implements IServiceArticle {
 	 * @return Article
 	 */
 
-	public void supprimer(Object article, TypeStructure typeStructure) throws MNVException {
+	public void supprimer(Object article) throws MNVException {
 		// TODO Auto-generated method stub
 		try {
-			sCrud.supprimer(article, typeStructure);
+			sCrud.supprimer(article);
 		} catch (MNVException_Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
