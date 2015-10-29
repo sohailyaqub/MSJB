@@ -5,6 +5,7 @@ public enum TypeStructure {
 	ARTICLE("Article"),
 	COMMENTAIRE("Commentaire"),
 	PROFIL("Profil"), 
+	CONTENU("Contenu"),
 	TAG("Tag"), 
 	TEMPLATE("Template"), 
 	SIGNALEMENT("Signalement");
