@@ -1,5 +1,6 @@
 package fr.cap.wikimnv.core.structure.service;
 
+
 import javax.jws.WebService;
 
 import fr.cap.wikimnv.core.commons.ICRUDGeneric;
