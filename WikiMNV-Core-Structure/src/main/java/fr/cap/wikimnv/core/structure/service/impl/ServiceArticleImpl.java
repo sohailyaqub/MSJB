@@ -30,7 +30,8 @@ public class ServiceArticleImpl implements IServiceArticle {
 		}
 	}
 
-	public Set<?> lister(TypeStructure typeStructure) throws MNVException {
+	@Override
+	public Set<?> lister(Object  typeStructure) throws MNVException {
 		try {
 			return (Set<Article>) sCrud.lister(typeStructure);
 		} catch (MNVException_Exception e) {
@@ -45,10 +46,11 @@ public class ServiceArticleImpl implements IServiceArticle {
 	 * @throws MNVException
 	 * @return Article
 	 */
-
+	@Override
 	public void supprimer(Object article) throws MNVException {
 		// TODO Auto-generated method stub
 		try {
+			
 			sCrud.supprimer(article);
 		} catch (MNVException_Exception e) {
 			// TODO Auto-generated catch block
@@ -83,7 +85,7 @@ public class ServiceArticleImpl implements IServiceArticle {
 	}
 	
 	
-
+	@Override
 	public Object lire(Object article, TypeStructure typeStructure) throws MNVException {
 		try {
 			return sCrud.lire(article, typeStructure);
@@ -100,4 +102,7 @@ public class ServiceArticleImpl implements IServiceArticle {
 		// return sCrud.faireRequete(query, params) ;
 		return null ;
 	}
+
+
+	
 }
