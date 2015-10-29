@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import fr.cap.wikimnv.core.commons.exception.MNVException;
 import fr.cap.wikimnv.core.persistance.domain.dao.IDAOGenric;
 import fr.cap.wikimnv.core.persistance.domain.dao.impl.DaoMongoDB;
+import fr.cap.wikimnv.core.pojo.Article;
 import fr.cap.wikimnv.core.pojo.Query;
 import fr.cap.wikimnv.core.pojo.TypeStructure;
 
@@ -98,13 +99,5 @@ public class ServiceCrudImpl implements IServiceCRUD {
 			e.printStackTrace();
 		}
 	}
-	@Override
-	public Set<Object> testSet() throws MNVException {
-		// TODO Auto-generated method stub
-		Set<Object> test=new HashSet<Object>();
-		test.add(new Object());
-		return test;
-	}
 	
-
 }
