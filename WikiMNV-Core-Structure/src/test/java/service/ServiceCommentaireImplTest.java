@@ -28,7 +28,7 @@ public class ServiceCommentaireImplTest {
 			e.printStackTrace();
 		}
 	}
-	
+/*	
 	@Test
 	public void testLire() {
 		try {
@@ -57,6 +57,6 @@ public class ServiceCommentaireImplTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 }

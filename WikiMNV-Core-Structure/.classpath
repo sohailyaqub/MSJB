@@ -30,10 +30,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/wikimnv-Logger-Cli_2015-09-01.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/WIKIMNV_loncoto-Core-Persistance-cli.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/WikiMNV_loncoto-Core-Commons"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/WikiMNV-Core-Commons_2015.09.03.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/WIKIMNV_loncoto-Core-Persistance-cli"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
