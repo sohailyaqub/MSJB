@@ -75,6 +75,23 @@
 			<version>2.3.0</version>
 		</dependency>
 		
+		
+				<dependency>
+			<groupId>wikimnv-core-commons</groupId>
+			<artifactId>wikimnv-core-commons</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/wikimnv-core-commons.jar</systemPath>
+		</dependency>
+		
+						<dependency>
+			<groupId>wikimnv-logger-cli</groupId>
+			<artifactId>wikimnv-logger-cli</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/wikimnv-logger-cli.jar</systemPath>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
