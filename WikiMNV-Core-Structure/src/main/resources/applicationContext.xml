@@ -26,16 +26,14 @@
 	
 	
 	<jaxws:server serviceClass="fr.cap.wikimnv.core.structure.service.IServiceCommentaire" address="/ServiceCommentaire" serviceBean="#ServiceCommentaire"> </jaxws:server>
-	<!--
 	<jaxws:server serviceClass="fr.cap.wikimnv.core.structure.service.IServiceTag" address="/ServiceTag" serviceBean="#ServiceTag"> </jaxws:server>
 	<jaxws:server serviceClass="fr.cap.wikimnv.core.structure.service.IServiceArticle" address="/ServiceArticle" serviceBean="#ServiceArticle"> </jaxws:server>
 	<jaxws:server serviceClass="fr.cap.wikimnv.core.structure.service.IServiceTemplate" address="/ServiceTemplate" serviceBean="#ServiceTemplate"> </jaxws:server>
 	<jaxws:server serviceClass="fr.cap.wikimnv.core.structure.service.IServiceSignalement" address="/ServiceSignalement" serviceBean="#ServiceSignalement"> </jaxws:server>
-	-->
+	
 	
 	
 	<bean id="ServiceCommentaire" class="fr.cap.wikimnv.core.structure.service.impl.ServiceCommentaireImpl" />
-	<!--
 	<bean id="ServiceTag" class="fr.cap.wikimnv.core.structure.service.impl.ServiceTagImpl" />
 	<bean id="ServiceArticle" class="fr.cap.wikimnv.core.structure.service.impl.ServiceArticleImpl" >
 	<property name="sCrud"  ref="sCrud"  />
@@ -48,6 +46,6 @@
 	<bean id="ServiceSignalement" class="fr.cap.wikimnv.core.structure.service.impl.ServiceSignalementImpl" >
 	    <property name="sCrud"  ref="sCrud"  />
 	    </bean>
-	-->
+	
 	<bean id="Crud" class="fr.cap.wikimnv.core.persistance.cli.PersistanceCli" />
 </beans>
